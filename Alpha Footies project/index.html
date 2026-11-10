@@ -3,1052 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alpha Footies | Premium Footwear & Accessories</title>
+    <meta
+      name="description"
+      content="Explore handcrafted footwear from Alpha Footies and order your favorite designs on WhatsApp."
+    />
+    <meta name="theme-color" content="#f5f4f0" />
+    <title>Alpha Footies | Handcrafted footwear</title>
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <style>
-      :root {
-        --bg-dark: #0a0a0d;
-        --bg-card: rgba(20, 22, 30, 0.75);
-        --accent-green: #25d366;
-        --accent-neon: #e5f038;
-        --text-main: #f3f4f6;
-        --text-muted: #9ca3af;
-        --glass-border: rgba(255, 255, 255, 0.08);
-        --glass-bg: rgba(15, 15, 20, 0.85);
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: var(--bg-dark);
-        color: var(--text-main);
-        overflow-x: hidden;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      .navbar-brand {
-        font-family: "Syne", sans-serif;
-      }
-
-      .navbar {
-        background: var(--glass-bg);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--glass-border);
-        padding: 15px 0;
-        transition: all 0.3s ease;
-      }
-
-      .navbar-brand {
-        font-size: 1.6rem;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        color: #fff;
-      }
-
-      .navbar-brand span {
-        color: var(--accent-green);
-      }
-
-      .nav-link {
-        color: var(--text-main) !important;
-        font-weight: 500;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link.active {
-        color: var(--accent-green) !important;
-      }
-
-      section {
-        padding: 90px 0;
-        position: relative;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .section-subtitle {
-        color: var(--accent-green);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
-        margin-bottom: 8px;
-        display: block;
-      }
-
-      .section-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
-      }
-
-      #home {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding-top: 120px;
-        background:
-          radial-gradient(
-            circle at 10% 20%,
-            rgba(37, 211, 102, 0.08) 0%,
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 90% 80%,
-            rgba(229, 240, 56, 0.05) 0%,
-            transparent 40%
-          );
-      }
-
-      .hero-title {
-        font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 1.2rem;
-      }
-
-      .hero-title span {
-        background: linear-gradient(135deg, #fff 0%, var(--accent-green) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .hero-subtitle {
-        color: var(--text-muted);
-        font-size: 1.15rem;
-        margin-bottom: 2.5rem;
-        max-width: 520px;
-      }
-
-      .btn-green {
-        background-color: var(--accent-green);
-        color: #000;
-        font-weight: 700;
-        padding: 12px 30px;
-        border-radius: 50px;
-        border: none;
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-      }
-
-      .btn-green:hover {
-        background-color: #1eb854;
-        color: #000;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      }
-
-      .btn-outline-custom {
-        border: 1px solid var(--glass-border);
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text-main);
-        font-weight: 600;
-        padding: 12px 28px;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .btn-outline-custom:hover {
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.3);
-      }
-
-      .hero-card-3d {
-        background: var(--bg-card);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        padding: 20px;
-        backdrop-filter: blur(12px);
-        transform-style: preserve-3d;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        position: relative;
-      }
-
-      .hero-card-img {
-        width: 100%;
-        border-radius: 16px;
-        object-fit: cover;
-        transform: translateZ(30px);
-      }
-
-      .floating-badge {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(8px);
-        border: 1px solid var(--glass-border);
-        padding: 8px 16px;
-        border-radius: 30px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--accent-neon);
-        transform: translateZ(50px);
-      }
-
-      .catalog-banner {
-        background: linear-gradient(135deg, #0d5238 0%, #073826 100%);
-        border: 1px solid rgba(37, 211, 102, 0.3);
-        border-radius: 24px;
-        padding: 35px;
-        color: white;
-        margin-bottom: 50px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      }
-
-      .filter-wrapper {
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        backdrop-filter: blur(12px);
-        border-radius: 20px;
-        padding: 20px;
-        margin-bottom: 40px;
-      }
-
-      .form-control-custom {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--glass-border);
-        color: #fff;
-        padding: 12px 20px 12px 45px;
-        border-radius: 12px;
-      }
-
-      .form-control-custom:focus {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: var(--accent-green);
-        box-shadow: none;
-        color: #fff;
-      }
-
-      .filter-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--glass-border);
-        color: var(--text-muted);
-        padding: 8px 18px;
-        border-radius: 30px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .filter-btn:hover,
-      .filter-btn.active {
-        background: var(--accent-green);
-        color: #fff;
-        border-color: var(--accent-green);
-      }
-
-      .product-card {
-        background: var(--bg-card);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        padding: 16px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        transform-style: preserve-3d;
-        transition: all 0.3s ease;
-      }
-
-      .product-img-wrapper {
-        position: relative;
-        border-radius: 14px;
-        overflow: hidden;
-        background: #141418;
-      }
-
-      .product-card img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .product-card:hover img {
-        transform: scale(1.08);
-      }
-
-      .price-tag {
-        position: absolute;
-        bottom: 12px;
-        left: 12px;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(8px);
-        padding: 6px 14px;
-        border-radius: 10px;
-        font-weight: 700;
-        color: var(--accent-neon);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transform: translateZ(20px);
-      }
-
-      .about-card {
-        background: var(--bg-card);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        padding: 30px;
-        height: 100%;
-        transition: transform 0.3s ease;
-      }
-
-      .about-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent-green);
-      }
-
-      .about-icon {
-        font-size: 2.2rem;
-        color: var(--accent-green);
-        margin-bottom: 20px;
-      }
-
-      .contact-box {
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        padding: 40px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 25px;
-      }
-
-      .contact-item i {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(37, 211, 102, 0.1);
-        border: 1px solid rgba(37, 211, 102, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--accent-green);
-        font-size: 1.2rem;
-      }
-
-      footer {
-        background: #050507;
-        border-top: 1px solid var(--glass-border);
-        padding: 40px 0 20px;
-      }
-
-      .social-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--glass-border);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-main);
-        margin: 0 6px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .social-icon:hover {
-        background: var(--accent-green);
-        color: #000;
-        transform: translateY(-3px);
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" />
+    <script src="products.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header class="fixed-top">
-      <nav class="navbar navbar-expand-lg px-4">
-        <div class="container">
-          <a class="navbar-brand" href="#home">ALPHA <span>FOOTIES</span></a>
-          <button
-            class="navbar-toggler border-0 text-white"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
-              <li class="nav-item">
-                <a class="nav-link active" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#shop">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                <a
-                  href="https://wa.me/c/2349056947405"
-                  target="_blank"
-                  class="btn btn-green btn-sm"
-                >
-                  <i class="fab fa-whatsapp fs-5"></i> View Catalog
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <header class="site-header">
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Alpha Footies home">
+          <img src="images/logo.jpg" alt="" />
+          <span>ALPHA <strong>FOOTIES</strong></span>
+        </a>
+        <a
+          class="button button-whatsapp topbar-cta"
+          href="https://wa.me/2349056947405"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span>Chat with us</span>
+        </a>
       </nav>
     </header>
 
-    <section id="home">
-      <div class="container">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-right">
-            <span
-              class="badge bg-outline-light text-uppercase mb-3 px-3 py-2 border border-secondary rounded-pill"
-              style="color: var(--accent-neon)"
-            >
-              <i class="fas fa-fire me-1"></i> New Collection
-            </span>
-            <h1 class="hero-title">
-              Step into <span>Unmatched</span> Style & Comfort.
-            </h1>
-            <p class="hero-subtitle">
-              Discover handcrafted footwear, custom slides, luxury slippers, and
-              genuine leather belts designed for maximum durability and
-              effortless drip.
-            </p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="#shop" class="btn btn-green">
-                Explore Products <i class="fas fa-arrow-right"></i>
-              </a>
-              <a
-                href="https://wa.me/c/2349056947405"
-                target="_blank"
-                class="btn btn-outline-custom"
-              >
-                WhatsApp Catalog
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div
-              class="hero-card-3d"
-              data-tilt
-              data-tilt-max="12"
-              data-tilt-speed="400"
-            >
-              <span class="floating-badge"
-                ><i class="fas fa-star me-1"></i> Top Seller</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
-                alt="Alpha Footwear Showcase"
-                class="hero-card-img"
-              />
-              <div
-                class="pt-3 d-flex justify-content-between align-items-center"
-                style="transform: translateZ(30px)"
-              >
-                <div>
-                  <h4 class="mb-0">Alpha Leather Edition</h4>
-                  <small class="text-muted">Handcrafted Premium Leather</small>
-                </div>
-                <span class="fs-5 fw-bold text-success">₦25,000</span>
-              </div>
-            </div>
-          </div>
+    <main id="home" class="page-shell">
+      <section class="profile-card" aria-labelledby="profile-name">
+        <div class="profile-cover" aria-hidden="true">
+          <span>MADE TO MOVE</span>
         </div>
-      </div>
-    </section>
-
-    <section id="shop">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-subtitle">Catalog Storefront</span>
-          <h2 class="section-title">Our Featured Footwear</h2>
-          <p class="text-muted">
-            Filter items or order instantly through WhatsApp with your custom
-            message.
-          </p>
-        </div>
-
-        <div class="catalog-banner" data-aos="fade-up">
-          <div class="row align-items-center gy-3">
-            <div class="col-lg-8">
-              <span class="badge bg-light text-dark mb-2 px-3 py-1 fw-bold"
-                >LIVE STOREFRONT</span
-              >
-              <h3 class="fw-bold mb-1">Browse Our Full WhatsApp Catalog</h3>
-              <p class="mb-0 opacity-90">
-                View all available sizes, colors, and live inventory directly
-                inside your WhatsApp app.
-              </p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-              <a
-                href="https://wa.me/c/2349056947405"
-                target="_blank"
-                class="btn btn-light rounded-pill fw-bold text-success px-4 py-2"
-              >
-                <i class="fab fa-whatsapp me-1"></i> Open Catalog App
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="filter-wrapper" data-aos="fade-up">
-          <div class="row g-3 align-items-center">
-            <div class="col-md-5">
-              <div class="position-relative">
-                <i
-                  class="fas fa-search position-absolute text-muted"
-                  style="left: 18px; top: 50%; transform: translateY(-50%)"
-                ></i>
-                <input
-                  type="text"
-                  id="searchBar"
-                  class="form-control form-control-custom"
-                  placeholder="Search shoes, slides, belts..."
-                />
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div
-                class="d-flex flex-wrap gap-2 justify-content-md-end"
-                id="filterPills"
-              >
-                <button class="filter-btn active" data-category="all">
-                  All Items
-                </button>
-                <button class="filter-btn" data-category="shoes">Shoes</button>
-                <button class="filter-btn" data-category="slides">
-                  Slides
-                </button>
-                <button class="filter-btn" data-category="slippers">
-                  Slippers
-                </button>
-                <button class="filter-btn" data-category="belts">Belts</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4" id="productGrid">
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="shoes"
-            data-aos="fade-up"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=600&q=80"
-                  alt="Alpha Half Shoe"
-                />
-                <span class="price-tag">₦15,000</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold">Shoes</small>
-                  <h5 class="fw-bold mt-1">Alpha Executive Half Shoe</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Executive%20Half%20Shoe"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="slides"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80"
-                  alt="Alpha Slides"
-                />
-                <span class="price-tag">₦7,000</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold"
-                    >Slides</small
-                  >
-                  <h5 class="fw-bold mt-1">Alpha Comfort Urban Slides</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Comfort%20Urban%20Slides"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="belts"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=600&q=80"
-                  alt="Alpha Belt"
-                />
-                <span class="price-tag">₦4,500</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold">Belts</small>
-                  <h5 class="fw-bold mt-1">Alpha Italian Leather Belt</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Italian%20Leather%20Belt"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="slippers"
-            data-aos="fade-up"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=600&q=80"
-                  alt="Alpha Slippers"
-                />
-                <span class="price-tag">₦9,500</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold"
-                    >Slippers</small
-                  >
-                  <h5 class="fw-bold mt-1">Alpha Cross Strap Slippers</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Cross%20Strap%20Slippers"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 5 -->
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="shoes"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=600&q=80"
-                  alt="Alpha Suede Loafers"
-                />
-                <span class="price-tag">₦18,000</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold">Shoes</small>
-                  <h5 class="fw-bold mt-1">Alpha Classic Suede Loafers</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Classic%20Suede%20Loafers"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-4 col-md-6 product-item"
-            data-category="belts"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="product-card" data-tilt data-tilt-max="10">
-              <div class="product-img-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
-                  alt="Reversible Belt"
-                />
-                <span class="price-tag">₦6,000</span>
-              </div>
-              <div
-                class="pt-3 d-flex flex-column flex-grow-1 justify-content-between"
-              >
-                <div>
-                  <small class="text-uppercase text-muted fw-bold">Belts</small>
-                  <h5 class="fw-bold mt-1">Alpha Reversible Buckle Belt</h5>
-                </div>
-                <a
-                  href="https://wa.me/2349056947405?text=I'm%20interested%20in%20Alpha%20Reversible%20Buckle%20Belt"
-                  target="_blank"
-                  class="btn btn-outline-custom mt-3 w-100 text-center"
-                >
-                  <i class="fab fa-whatsapp text-success me-2"></i> Order via
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="noResults" class="text-center py-5 d-none">
-          <i class="fas fa-search-minus text-muted display-4 mb-3"></i>
-          <h4 class="text-muted">No matching items found</h4>
-          <p class="text-secondary">
-            Try searching for another keyword or change your filter category.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" style="background: rgba(255, 255, 255, 0.01)">
-      <div class="container">
-        <div class="row align-items-center gy-5 mb-5">
-          <div class="col-lg-6" data-aos="fade-right">
-            <span class="section-subtitle">Who We Are</span>
-            <h2 class="section-title mb-3">
-              Crafting Quality Footwear for the Modern Alpha
-            </h2>
-            <p class="text-muted leading-relaxed">
-              Alpha Footies is a premier fashion brand delivering handcrafted
-              shoes, slides, slippers, and accessories. We blend traditional
-              leathercraft with modern streetwear aesthetics to ensure every
-              step you take makes a statement.
-            </p>
-            <div class="d-flex gap-4 mt-4">
-              <div>
-                <h3 class="fw-bold text-success mb-0">100%</h3>
-                <small class="text-muted">Genuine Leather</small>
-              </div>
-              <div class="border-start border-secondary opacity-50 px-3">
-                <h3 class="fw-bold text-success mb-0">24/7</h3>
-                <small class="text-muted">WhatsApp Support</small>
-              </div>
-              <div class="border-start border-secondary opacity-50 px-3">
-                <h3 class="fw-bold text-success mb-0">36 States</h3>
-                <small class="text-muted">Nationwide Delivery</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
+        <div class="profile-content">
+          <div class="profile-avatar-wrap">
             <img
-              src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?auto=format&fit=crop&w=800&q=80"
-              alt="About Alpha Footies Craftsmanship"
-              class="img-fluid rounded-4 border border-secondary border-opacity-25 shadow-lg"
+              class="profile-avatar"
+              src="images/logo.jpg"
+              alt="Alpha Footies logo"
             />
           </div>
+          <div class="profile-details">
+            <div class="profile-heading">
+              <div>
+                <p class="eyebrow">@alphafooties</p>
+                <h1 id="profile-name">Alpha Footies</h1>
+              </div>
+              <a
+                class="button button-whatsapp profile-cta"
+                href="https://wa.me/2349056947405"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+            <p class="profile-bio">
+              Footwear made for your everyday statement. Explore our latest
+              handcrafted styles and message us for sizes, colors, and pricing.
+            </p>
+            <div class="profile-stats" aria-label="Profile statistics">
+              <span><strong id="postCount">0</strong> posts</span>
+              <span><strong>Made with care</strong></span>
+              <span><strong>Nigeria</strong></span>
+            </div>
+            <p class="profile-note">
+              <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+              Nationwide delivery · Pay on delivery
+            </p>
+            <div class="profile-socials" aria-label="Follow Alpha Footies">
+              <span>Follow us</span>
+              <a
+                href="https://www.tiktok.com/@alpha_footies"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Alpha Footies on TikTok"
+              >
+                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                @alpha_footies
+              </a>
+              <a
+                href="https://www.instagram.com/brodaayoola"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Alpha Footies on Instagram"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                @brodaayoola
+              </a>
+              <a
+                href="https://x.com/alphafooties"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Alpha Footies on X"
+              >
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                @alphafooties
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="posts" class="feed-section" aria-labelledby="feed-title">
+        <div class="feed-heading">
+          <div>
+            <p class="eyebrow">THE ALPHA EDIT</p>
+            <h2 id="feed-title">Latest work</h2>
+          </div>
+          <span class="feed-count"
+            ><span id="visibleCount">0</span> styles</span
+          >
         </div>
 
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="about-card">
-              <i class="fas fa-truck-fast about-icon"></i>
-              <h4 class="fw-bold">Nationwide Delivery</h4>
-              <p class="text-muted mb-0">
-                Fast, secure doorstep delivery across Nigeria right to your
-                location.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="about-card">
-              <i class="fas fa-hand-holding-dollar about-icon"></i>
-              <h4 class="fw-bold">Pay on Delivery</h4>
-              <p class="text-muted mb-0">
-                Order with total peace of mind. Pay safely when your order
-                arrives.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-card">
-              <i class="fas fa-shield-halved about-icon"></i>
-              <h4 class="fw-bold">Guaranteed Durability</h4>
-              <p class="text-muted mb-0">
-                Built using premium materials designed to withstand everyday
-                wear.
-              </p>
-            </div>
+        <div class="feed-tools">
+          <label class="search-field">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span class="visually-hidden">Search styles</span>
+            <input
+              type="search"
+              id="searchBar"
+              placeholder="Search styles..."
+              autocomplete="off"
+            />
+          </label>
+          <div class="filter-list" role="group" aria-label="Filter styles">
+            <button
+              class="filter-btn active"
+              type="button"
+              data-category="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-category="shoes"
+              aria-pressed="false"
+            >
+              Shoes
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-category="sandals"
+              aria-pressed="false"
+            >
+              Sandals
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-category="slides"
+              aria-pressed="false"
+            >
+              Slides
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-category="slippers"
+              aria-pressed="false"
+            >
+              Slippers
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-category="accessories"
+              aria-pressed="false"
+            >
+              Accessories
+            </button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-subtitle">Get In Touch</span>
-          <h2 class="section-title">We Are Ready to Serve You</h2>
-          <p class="text-muted">
-            Have a question or custom size request? Reach out via WhatsApp or
-            phone.
+        <div id="productGrid" class="post-grid" aria-live="polite"></div>
+        <div id="noResults" class="empty-state" hidden>
+          <i class="fa-regular fa-face-meh" aria-hidden="true"></i>
+          <h3>No styles found</h3>
+          <p>Try a different search or category.</p>
+        </div>
+      </section>
+
+      <section id="about" class="about-strip" aria-label="About Alpha Footies">
+        <div class="about-mark">
+          <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>
+        </div>
+        <div>
+          <h2>Find your next favorite pair</h2>
+          <p>
+            See something you like? Ask us about its price, size, and
+            availability.
           </p>
         </div>
-
-        <div class="row gy-4 align-items-center justify-content-center">
-          <div class="col-lg-8" data-aos="zoom-in">
-            <div class="contact-box">
-              <div class="row g-4">
-                <div class="col-md-6">
-                  <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                      <small class="text-muted d-block">WhatsApp & Phone</small>
-                      <a
-                        href="https://wa.me/2349056947405"
-                        class="text-white text-decoration-none fw-bold fs-5"
-                        >09056947405</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="contact-item">
-                    <i class="fas fa-truck"></i>
-                    <div>
-                      <small class="text-muted d-block">Delivery Area</small>
-                      <span class="text-white fw-bold fs-6"
-                        >Nationwide (Pay on Delivery)</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <hr class="border-secondary my-4 opacity-25" />
-
-              <div class="text-center pt-2">
-                <p class="text-muted mb-3">
-                  Want to speak to us directly or request custom sizing?
-                </p>
-                <a
-                  href="https://wa.me/2349056947405?text=Hello%20Alpha%20Footies,%20I'd%20like%20to%20make%20an%20inquiry"
-                  target="_blank"
-                  class="btn btn-green btn-lg fs-6"
-                >
-                  <i class="fab fa-whatsapp me-2"></i> Start Instant WhatsApp
-                  Chat
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container text-center">
-        <a href="#home" class="navbar-brand text-white fs-4 d-inline-block mb-2"
-          >ALPHA <span>FOOTIES</span></a
+        <a
+          class="button button-dark"
+          href="https://wa.me/2349056947405?text=Hello%20Alpha%20Footies%2C%20I%27d%20like%20to%20ask%20about%20your%20latest%20styles."
+          target="_blank"
+          rel="noopener noreferrer"
         >
-        <p class="text-muted small mb-4">
-          Your #1 store for shoes, slides, slippers, and premium leather
-          accessories.
-        </p>
-        <div class="mb-4">
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.threads.com/@brodaayoola" class="social-icon"
-            ><i class="fab fa-thread"></i
-          ></a>
-          <a
-            href="https://wa.me/2349056947405"
-            target="_blank"
-            class="social-icon"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-        </div>
-        <p class="text-secondary small mb-0">
-          &copy; 2026 Alpha Footies. All rights reserved.
-        </p>
+          Message us
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            aria-hidden="true"
+          ></i>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"
+        >ALPHA <strong>FOOTIES</strong></a
+      >
+      <p>Handcrafted footwear. Made to move with you.</p>
+      <div class="footer-links">
+        <a
+          href="https://www.tiktok.com/@alpha_footies"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-tiktok" aria-hidden="true"></i> TikTok
+        </a>
+        <a
+          href="https://www.instagram.com/brodaayoola"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram
+        </a>
+        <a
+          href="https://x.com/alphafooties"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X
+        </a>
+        <a
+          href="https://www.threads.com/@brodaayoola"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-threads" aria-hidden="true"></i> Threads
+        </a>
+        <a
+          href="https://wa.me/2349056947405"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
       </div>
+      <small>&copy; 2026 Alpha Footies</small>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-    <script>
-      (function () {
-        const originalWarn = console.warn;
-        const originalError = console.error;
-        console.warn = function (...args) {
-          if (
-            args[0] &&
-            typeof args[0] === "string" &&
-            args[0].includes("Permissions-Policy")
-          )
-            return;
-          originalWarn.apply(console, args);
-        };
-        console.error = function (...args) {
-          if (
-            args[0] &&
-            typeof args[0] === "string" &&
-            args[0].includes("Permissions-Policy")
-          )
-            return;
-          originalError.apply(console, args);
-        };
-      })();
-    </script>
-
-    <script>
-      AOS.init({
-        duration: 700,
-        once: true,
-      });
-
-      VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-        max: 10,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.15,
-      });
-
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 150;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
-      });
-
-      const searchBar = document.getElementById("searchBar");
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const productItems = document.querySelectorAll(".product-item");
-      const noResults = document.getElementById("noResults");
-
-      let activeCategory = "all";
-      let activeSearch = "";
-
-      function filterProducts() {
-        let visible = 0;
-        productItems.forEach((item) => {
-          const text = item.textContent.toLowerCase();
-          const category = item.getAttribute("data-category");
-
-          const matchesCategory =
-            activeCategory === "all" || category === activeCategory;
-          const matchesSearch = text.includes(activeSearch);
-
-          if (matchesCategory && matchesSearch) {
-            item.classList.remove("d-none");
-            visible++;
-          } else {
-            item.classList.add("d-none");
-          }
-        });
-
-        if (visible === 0) {
-          noResults.classList.remove("d-none");
-        } else {
-          noResults.classList.add("d-none");
-        }
-      }
-
-      searchBar.addEventListener("input", (e) => {
-        activeSearch = e.target.value.toLowerCase().trim();
-        filterProducts();
-      });
-
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          activeCategory = btn.getAttribute("data-category");
-          filterProducts();
-        });
-      });
-    </script>
   </body>
 </html>

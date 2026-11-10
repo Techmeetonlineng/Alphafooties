@@ -1,0 +1,148 @@
+// Add new items at the top so the gallery always shows the latest work first.
+// Copy an image into images/ and add its filename, name, category, and caption here.
+window.products = [
+  {
+    image: "FB_IMG_1741839884370.jpg",
+    name: "Everyday leather sandals",
+    category: "sandals",
+    caption: "A comfortable everyday style with a clean leather finish.",
+  },
+  {
+    image: "FB_IMG_1741207128455.jpg",
+    name: "White mule slippers",
+    category: "slippers",
+    caption: "A sleek mule with a simple, easy-to-wear slip-on shape.",
+  },
+  {
+    image: "FB_IMG_1741207119546.jpg",
+    name: "Suede buckle slippers",
+    category: "slippers",
+    caption: "A soft suede finish with a buckle detail.",
+  },
+  {
+    image: "FB_IMG_1741206932243.jpg",
+    name: "Everyday leather slides",
+    category: "slides",
+    caption: "Easy comfort in a warm, versatile shade.",
+  },
+  {
+    image: "FB_IMG_1740303796340.jpg",
+    name: "Suede comfort slides",
+    category: "slides",
+    caption: "Soft-looking suede styles in a range of colors.",
+  },
+  {
+    image: "FB_IMG_1740303777800.jpg",
+    name: "Red leather sandals",
+    category: "sandals",
+    caption: "A rich pop of color with a relaxed profile.",
+  },
+  {
+    image: "FB_IMG_1740303771131.jpg",
+    name: "Cross-strap leather slides",
+    category: "slides",
+    caption: "A distinctive cross-strap design in deep navy.",
+  },
+  {
+    image: "FB_IMG_1739378759178.jpg",
+    name: "Buckle-strap sandals",
+    category: "sandals",
+    caption: "A timeless buckle detail with a comfortable footbed.",
+  },
+  {
+    image: "FB_IMG_1739378709919.jpg",
+    name: "Suede buckle mules",
+    category: "slippers",
+    caption: "A relaxed mule silhouette with a refined suede finish.",
+  },
+  {
+    image: "FB_IMG_1739378687582.jpg",
+    name: "Embellished leather slides",
+    category: "slides",
+    caption: "A subtle statement detail for a standout pair.",
+  },
+  {
+    image: "FB_IMG_1739139391010.jpg",
+    name: "Patterned buckle slippers",
+    category: "slippers",
+    caption: "A woven look with a polished buckle accent.",
+  },
+  {
+    image: "FB_IMG_1739091633875.jpg",
+    name: "Textured black slides",
+    category: "slides",
+    caption: "An all-black look with a patterned finish.",
+  },
+  {
+    image: "FB_IMG_1739091474255.jpg",
+    name: "Cross-strap leather sandals",
+    category: "sandals",
+    caption: "A versatile design shown in classic colorways.",
+  },
+  {
+    image: "FB_IMG_1739091464775.jpg",
+    name: "Woven toe-post sandals",
+    category: "sandals",
+    caption: "A bright contrast with a woven-look strap.",
+  },
+  {
+    image: "FB_IMG_1738969641797.jpg",
+    name: "Double-strap suede slides",
+    category: "slides",
+    caption: "Soft suede straps with an adjustable look.",
+  },
+  {
+    image: "FB_IMG_1738969636166.jpg",
+    name: "Classic black leather slides",
+    category: "slides",
+    caption: "A simple black staple with a clean silhouette.",
+  },
+  {
+    image: "FB_IMG_1738678224778.jpg",
+    name: "Everyday buckle sandals",
+    category: "sandals",
+    caption: "A neat buckle detail on a versatile everyday pair.",
+  },
+  {
+    image: "FB_IMG_1738678219806.jpg",
+    name: "Contrast-sole slides",
+    category: "slides",
+    caption: "A crisp contrast finish with an easy slip-on shape.",
+  },
+  {
+    image: "FB_IMG_1738677784029.jpg",
+    name: "Suede comfort slippers",
+    category: "slippers",
+    caption: "A warm neutral tone with a soft suede finish.",
+  },
+  {
+    image: "FB_IMG_1738677347835.jpg",
+    name: "Cross-strap slippers",
+    category: "slippers",
+    caption: "A comfortable everyday pair with a crossover design.",
+  },
+  {
+    image: "FB_IMG_1738677335070.jpg",
+    name: "Button-detail leather slides",
+    category: "slides",
+    caption: "A distinctive button detail on a relaxed slide.",
+  },
+  {
+    image: "FB_IMG_1738677316314.jpg",
+    name: "Suede mule slippers",
+    category: "slippers",
+    caption: "A warm suede look with an easy slip-on fit.",
+  },
+  {
+    image: "FB_IMG_1738677298348.jpg",
+    name: "Leather cross-strap sandals",
+    category: "sandals",
+    caption: "A versatile leather sandal with a clean profile.",
+  },
+  {
+    image: "FB_IMG_1738618952830.jpg",
+    name: "Executive shoes and belt",
+    category: "shoes",
+    caption: "A coordinated leather look for a sharper finish.",
+  },
+];
