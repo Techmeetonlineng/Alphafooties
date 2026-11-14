@@ -5,6 +5,8 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const noResults = document.getElementById("noResults");
 const visibleCount = document.getElementById("visibleCount");
 const postCount = document.getElementById("postCount");
+const themeToggle = document.querySelector(".theme-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 if (!Array.isArray(window.products)) {
   throw new Error("Product list is missing. Check that products.js is loaded.");
@@ -32,14 +34,46 @@ function getPriceLabel(product) {
   if (product.price) return product.price;
 
   const categoryPrices = {
-    shoes: "From ₦45,000",
+    shoes: "From ₦50,000",
     heels: "From ₦45,000",
     slides: "From ₦20,000",
-    sandals: "₦15,000–₦20,000",
-    slippers: "₦15,000–₦20,000",
+    sandals: "₦20,000",
+    slippers: "₦20,000",
   };
 
   return categoryPrices[product.category] || "Ask for price";
+}
+
+function updateThemeButton(theme) {
+  if (!themeToggle) return;
+
+  const isDark = theme === "dark";
+  const icon = themeToggle.querySelector("i");
+  const label = themeToggle.querySelector("span");
+
+  icon.classList.toggle("fa-moon", !isDark);
+  icon.classList.toggle("fa-sun", isDark);
+  label.textContent = isDark ? "Light mode" : "Dark mode";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode",
+  );
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+
+function applyTheme(theme) {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  document.body.dataset.theme = nextTheme;
+  document.documentElement.style.colorScheme = nextTheme;
+  localStorage.setItem("alpha-footies-theme", nextTheme);
+  updateThemeButton(nextTheme);
+}
+
+function initializeTheme() {
+  const savedTheme = localStorage.getItem("alpha-footies-theme");
+  const initialTheme =
+    savedTheme || (prefersDarkScheme.matches ? "dark" : "light");
+  applyTheme(initialTheme);
 }
 
 function renderProducts() {
@@ -48,9 +82,7 @@ function renderProducts() {
       const name = escapeHtml(product.name);
       const category = escapeHtml(product.category);
       const categoryLabel = escapeHtml(
-        product.category === "belts"
-          ? "Belts & accessories"
-          : product.category,
+        product.category === "belts" ? "Belts & accessories" : product.category,
       );
       const caption = escapeHtml(product.caption);
       const image = escapeHtml(product.image);
@@ -128,5 +160,28 @@ filterButtons.forEach((button) => {
   });
 });
 
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme =
+      document.body.dataset.theme === "dark" ? "dark" : "light";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+  });
+}
+
+if (typeof prefersDarkScheme.addEventListener === "function") {
+  prefersDarkScheme.addEventListener("change", (event) => {
+    if (!localStorage.getItem("alpha-footies-theme")) {
+      applyTheme(event.matches ? "dark" : "light");
+    }
+  });
+} else if (typeof prefersDarkScheme.addListener === "function") {
+  prefersDarkScheme.addListener((event) => {
+    if (!localStorage.getItem("alpha-footies-theme")) {
+      applyTheme(event.matches ? "dark" : "light");
+    }
+  });
+}
+
 searchBar.addEventListener("input", filterProducts);
+initializeTheme();
 renderProducts();
