@@ -24,8 +24,22 @@ function escapeHtml(value) {
 }
 
 function createOrderUrl(productName) {
-  const message = `Hello Alpha Footies, I'm interested in the ${productName}. Please share the available sizes and price.`;
+  const message = `Hello Alpha Footies, I'm interested in the ${productName}. Please confirm the price, available sizes, and colours.`;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function getPriceLabel(product) {
+  if (product.price) return product.price;
+
+  const categoryPrices = {
+    shoes: "From ₦45,000",
+    heels: "From ₦45,000",
+    slides: "From ₦20,000",
+    sandals: "₦15,000–₦20,000",
+    slippers: "₦15,000–₦20,000",
+  };
+
+  return categoryPrices[product.category] || "Ask for price";
 }
 
 function renderProducts() {
@@ -33,8 +47,14 @@ function renderProducts() {
     .map((product) => {
       const name = escapeHtml(product.name);
       const category = escapeHtml(product.category);
+      const categoryLabel = escapeHtml(
+        product.category === "belts"
+          ? "Belts & accessories"
+          : product.category,
+      );
       const caption = escapeHtml(product.caption);
       const image = escapeHtml(product.image);
+      const price = escapeHtml(getPriceLabel(product));
       const searchText = escapeHtml(
         `${product.name} ${product.category} ${product.caption}`,
       ).toLowerCase();
@@ -57,10 +77,11 @@ function renderProducts() {
           </a>
           <div class="post-caption">
             <div class="post-title-row">
-              <span class="post-category">${category}</span>
+              <span class="post-category">${categoryLabel}</span>
               <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </div>
             <h3>${name}</h3>
+            <p class="post-price">${price}</p>
             <p>${caption}</p>
             <a class="post-order-link" href="${orderUrl}" target="_blank" rel="noopener noreferrer">
               Ask for price &amp; sizes
